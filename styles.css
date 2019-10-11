@@ -1,0 +1,86 @@
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-around;
+	position: relative;
+  max-width: 250px;
+  margin: 0 auto;
+}
+
+form > input, form label {
+  margin: 10px;
+}
+  
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.input-container--input {
+  border: none;
+  border-bottom: 1px solid #aaa;
+  width: 100%;
+}
+
+.input-container--input::-webkit-inner-spin-button,
+.input-container--input::-webkit-outer-spin-button {
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.input-container--input:focus {
+  outline: none;
+}
+
+.input-container--input:focus + .placeholder .placeholder-text,
+.input-container--input:valid + .placeholder .placeholder-text,
+.input-container--input:disabled + .placeholder .placeholder-text{
+  bottom: 20px;
+  font-size: 12px;
+}
+
+.input-container--input:focus + .placeholder:after{
+  width: 100%;
+  left: 0;
+}
+
+.placeholder {
+  position: absolute;
+  bottom: 2px;
+  left: 0px;
+  pointer-events: none;
+  width: 100%;
+}
+
+.placeholder:after {
+  content: "";
+  width: 0;
+  height: 100%;
+  border-bottom: 2px solid #202F55;
+  position: absolute;
+  left: 50%;
+  transition: 500ms width ease, 500ms left ease;
+}
+      
+.placeholder-text {
+  position: absolute;
+  bottom: 2px;
+  transition: 500ms bottom ease, 500ms font-size ease;
+}
+  
+#submit{
+  background: #202F55;
+  border: 0;
+  color: white;
+  padding:  10px 15px;
+  border-radius: 5px;
+}
+    
+#submit:hover {
+  cursor: pointer;
+}

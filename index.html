@@ -5,10 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="styles.css">
+  <link rel='icon' href='images/astronaut.png' type='image/x-icon' />
   <title>Contact List</title>
 </head>
 <body>
+  <h1>Contact List</h1>
 
+  <form>
+      <label class="input-container">
+        <input type="text" class="input-container--input" id="name" required>
+        <div class="placeholder">
+          <span class="placeholder-text">Full Name</span>
+        </div>
+      </label>
+
+      <label class="input-container">
+        <input type="text" class="input-container--input" id="address" required>
+        <div class="placeholder">
+          <span class="placeholder-text">Address</span>
+        </div>
+      </label>
+
+      <label class="input-container">
+        <input type="number" class="input-container--input" id="number" required>
+        <div class="placeholder">
+          <span class="placeholder-text">Phone Number</span>
+        </div>
+      </label>
+      
+      <input id="submit" type="submit" value="&plus;Add" />
+    </form>
   <script src="scripts.js"></script>
 </body>
 </html>
