@@ -1,4 +1,8 @@
-* { box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+* { box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; color: #444; }
+
+body {
+  background: url("/images/white-waves.png");
+}
 
 h1 {
   text-align: center;
@@ -27,6 +31,7 @@ form > input, form label {
   border: none;
   border-bottom: 1px solid #aaa;
   width: 100%;
+  background: transparent;
 }
 
 .input-container--input::-webkit-inner-spin-button,
@@ -95,8 +100,9 @@ form > input, form label {
 
 .contact-list--contain.header{
   font-size: 1.25rem;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid #444;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .contact-list--contain{
