@@ -1,3 +1,5 @@
+* { box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+
 h1 {
   text-align: center;
 }
@@ -38,8 +40,7 @@ form > input, form label {
 }
 
 .input-container--input:focus + .placeholder .placeholder-text,
-.input-container--input:valid + .placeholder .placeholder-text,
-.input-container--input:disabled + .placeholder .placeholder-text{
+.input-container--input:valid + .placeholder .placeholder-text{
   bottom: 20px;
   font-size: 12px;
 }
@@ -83,4 +84,34 @@ form > input, form label {
     
 #submit:hover {
   cursor: pointer;
+}
+
+.contact-list {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.contact-list--contain.header{
+  font-size: 1.25rem;
+  border-bottom: 1px solid;
+  margin-bottom: 10px;
+}
+
+.contact-list--contain{
+  display: flex;
+}
+
+.contact-list--contain__name,
+.contact-list--contain__number {
+  flex: 2
+}
+
+.contact-list--contain__address {
+  flex: 5;
+}
+
+.contact-list--contain__remove {
+  flex: 1;
 }
