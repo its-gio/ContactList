@@ -98,26 +98,40 @@ form > input, form label {
   flex-direction: column;
 }
 
-.contact-list--contain.header{
+.contact-list--header-contain{
   font-size: 1.25rem;
   border-bottom: 1px solid #444;
   margin-bottom: 10px;
   font-weight: bold;
 }
 
+.contact-list--header-contain,
 .contact-list--contain{
   display: flex;
 }
 
+.contact-list--header-contain__name,
 .contact-list--contain__name,
+.contact-list--header-contain__number,
 .contact-list--contain__number {
   flex: 2
 }
 
+.contact-list--header-contain__address,
 .contact-list--contain__address {
   flex: 5;
 }
 
+.contact-list--header-contain__remove,
 .contact-list--contain__remove {
   flex: 1;
+}
+
+.contact-list--contain__remove {
+  text-align: center;
+}
+
+.contact-list--contain__remove:after {
+  content: 'x';
+  cursor: pointer;
 }
