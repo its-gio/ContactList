@@ -131,7 +131,15 @@ form > input, form label {
   text-align: center;
 }
 
-.contact-list--contain__remove:after {
+.x {
+  text-align: center;
+}
+
+.x:hover:after {
+  color:red;
+}
+
+.x:after {
   content: 'x';
   cursor: pointer;
 }

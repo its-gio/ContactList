@@ -1,4 +1,7 @@
 const form = document.querySelector("form"),
+      name = form.querySelector("#name"),
+      address = form.querySelector("#address"),
+      number = form.querySelector("#number"),
       contactList = document.querySelector(".contact-list");
 
 // Create contact class for data
@@ -9,32 +12,45 @@ class Contact {
     this.number = number;
   }
 
+  createEl(type, className) {
+    const el = document.createElement(`${type}`);
+    el.classList.add(`${className}`);
+
+    return el;
+  }
+
   createContact() {
-    let contactUI = `
-      <div class="contact-list--contain">
+    let container = this.createEl("div", "contact-list--contain"),
+        x = this.createEl("span", "x"),
+        xContain = this.createEl("span", "contact-list--contain__remove"),
+        contactUI = `
         <span class="contact-list--contain__name">${this.name}</span>
         <span class="contact-list--contain__address">${this.address}</span>
         <span class="contact-list--contain__number">${this.number}</span>
-        <span class="contact-list--contain__remove"></span>
-      </div>
     `;
 
-    contactList.innerHTML += contactUI;
+    x.addEventListener("click", this.deleteContact);
+
+    container.innerHTML += contactUI;
+    xContain.appendChild(x)
+    container.appendChild(xContain);
+    return contactList.appendChild(container);
+  }
+
+  deleteContact(e) {
+    e.target.parentElement.parentElement.remove();
   }
 
   clearInputs() {
-    form.querySelector("#name").value = '';
-    form.querySelector("#address").value = '';
-    form.querySelector("#number").value = '';
+    name.value = '';
+    address.value = '';
+    number.value = '';
   }
 }
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  let name = form.querySelector("#name").value,
-      address = form.querySelector("#address").value,
-      number = form.querySelector("#number").value,
-      contact = new Contact(name, address, number);
+  const contact = new Contact(name.value, address.value, number.value);
 
   contact.createContact();
 
